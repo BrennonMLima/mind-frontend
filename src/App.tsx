@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import GlobalStyles from './GlobalStyles';
+import AppRouter from './router/router';
+import { login } from './service/users';
+import { getCookie, setCookie } from 'typescript-cookie';
 
-function App() {
+const App: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = getCookie("auth-token");
+    if (token) {
+      setIsLoggedIn(true)
+    }
+  }, [isLoggedIn])
+
+  const handleLogin = async (email: string, password: string) => {
+    try {
+      const { data: { token }, status } = await login(email, password);
+      if (status === 200) {
+        setCookie("auth-token", token)
+        setIsLoggedIn(true)
+      }
+    } catch {
+      alert('Dados incorretos! Tente Novamente.')
+    }
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppRouter
+        isLoggedIn={isLoggedIn}
+        handleLogin={handleLogin}
+      />
+      <GlobalStyles />
     </div>
   );
-}
+};
 
 export default App;
