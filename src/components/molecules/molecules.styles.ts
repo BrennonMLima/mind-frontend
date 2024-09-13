@@ -8,6 +8,7 @@ export const HeaderStyled = styled.div`
     background-color: var(--cinza-escuro);
     color: #fff;
     padding: 15px 35px; 
+    margin-bottom: 30px;
 `
 export const HeaderContainer = styled.div`
     display: flex;
@@ -16,6 +17,7 @@ export const HeaderContainer = styled.div`
     background-color: var(--cinza-escuro);
     gap: 6px;
     cursor: pointer;
+
 `
 export const FooterStyled = styled.div`
     display: flex;
@@ -43,20 +45,6 @@ export const SearchBoardlStyled = styled.div`
     border-bottom: 2px solid ;
     background-color: var(--preto);
   }
-`
-export const TextArea = styled.textarea`
-    display:flex;
-    resize:none;
-    height: 50px;
-    align-items: center;
-    font-size: 40px;
-    width: 89%;
-    background-color: var(--cinza-escuro);
-    border-right: 1px #666 solid;
-    margin-right: 1px;
-    &:focus{
-      background-color: var(--preto);
-    }
 `
 
 export const TableHeaderStyled = styled.div`
@@ -91,19 +79,12 @@ export const ModalOverlay = styled.div`
 export const ModalContent = styled.div`
   display: flex;
   align-items: center;
-  background: var(--azul-escuro);
+  background: var(--vermelho);
   border-radius: 5px;
   margin-top: 70px;
   margin-right: 10px;
   border: solid 1px black;
   &:hover{
-    background: var(--azul-claro);
+    background: var(--vermelho-escuro);
 }
 `;
-
-export const ModalHeaderStyled = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-export const ModalLabelStyled = styled.div`
-`

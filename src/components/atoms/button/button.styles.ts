@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledButton = styled.button`
   padding: 10px 20px;
   border: 0;
-  background: var(--azul-escuro);
+  background: var(--vermelho);
   border-radius: 0.5rem;
   color: white;
   display: flex;
@@ -13,11 +13,11 @@ export const StyledButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: var(--azul-claro);
+    background: var(--vermelho-escuro);
   }
 
   &:focus {
     outline: none;
   }
 `
-;
+  ;

@@ -1,29 +1,33 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import SignIn from '../components/login/sign-in';
 import SignUp from '../components/login/sign-up';
-
+import MainPage from '../components/template/mainpage';
+import ProjectDetailPage from '../components/template/projectdetail';
 
 interface RouterProps {
     isLoggedIn: boolean;
     handleLogin: (name: string, password: string) => void;
 }
 
-const AppRouter: React.FC<RouterProps> = ({
-    isLoggedIn,
-    handleLogin,
-}) => {
+const AppRouter: React.FC<RouterProps> = ({ isLoggedIn, handleLogin }) => {
     return (
         <Router>
-            {isLoggedIn ? (
-                <div>logado</div>
-            ) : (
-                <Routes>
-                    <Route path="/login" element={<SignIn onLogin={handleLogin} />} />
-                    <Route path="/signup" element={<SignUp />} />
-                    <Route path="*" element={<SignIn onLogin={handleLogin} />} />
-                </Routes>
-            )}
+            <Routes>
+                {isLoggedIn ? (
+                    <>
+                        <Route path="/" element={<MainPage />} />
+                        <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+                        <Route path="*" element={<Navigate to="/" />} />
+                    </>
+                ) : (
+                    <>
+                        <Route path="/login" element={<SignIn onLogin={handleLogin} />} />
+                        <Route path="/signup" element={<SignUp />} />
+                        <Route path="*" element={<Navigate to="/login" />} />
+                    </>
+                )}
+            </Routes>
         </Router>
     );
 };

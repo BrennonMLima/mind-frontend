@@ -10,6 +10,7 @@ export default createGlobalStyle`
 }
 html, body {
     height: 100%;
+    width: 100vw;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -24,13 +25,13 @@ font-family: 'Roboto', sans-serif;
 
 :root {
 --preto: #161a1d;
+--vermelho: #dc1c44;
+--vermelho-escuro: #640b0b;
 --cinza-escuro: #212528;
---azul-escuro: #011936;
---azul-claro: #3772FF;
 }
 
 .link{
-    color: var(--azul-claro);
+    color: var(--vermelho);
     text-decoration: none;
 }
     h1,h2,h3,span,p,svg{
@@ -42,7 +43,7 @@ font-family: 'Roboto', sans-serif;
     margin-left: 10px;
     font-size: 18px;
     &:hover {
-        color: var(--azul-escuro);
+        color: var(--vermelho-escuro);
     }
 }
 `;

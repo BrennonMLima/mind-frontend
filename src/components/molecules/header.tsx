@@ -8,7 +8,7 @@ import UserImage from '../atoms/userimage';
 interface User {
   name: string;
   email: string;
-  image: {type:string, data: number[]};
+  image: { type: string, data: number[] };
 }
 
 const Header: React.FC = () => {
@@ -47,11 +47,11 @@ const Header: React.FC = () => {
   return (
     <HeaderStyled>
       <HeaderContainer>
-        <h1>Minhas Finanças</h1>
+        <h1 style={{ color: "var(--vermelho)" }}>Mind Projects</h1>
       </HeaderContainer>
       <HeaderContainer onClick={handleModalOpen}>
-        <UserImage image={user?.image || null}/>
-        {user && <span>{user.email}</span>}
+        <UserImage image={user?.image || null} />
+        {user && <span style={{ color: "var(--vermelho)" }}>{user.email}</span>}
         <BsPersonFillGear />
       </HeaderContainer>
       {isModalOpen && <LogoutModal onClose={handleModalClose} />}

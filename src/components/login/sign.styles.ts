@@ -66,14 +66,14 @@ export const ImageContainer = styled.div`
     .image-label {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--azul-escuro);
+    background-color: var(--vermelho);
     color: white;
     border-radius: 5px;
     cursor: pointer;
   }
     
     .image-label:hover {
-    background: var(--azul-claro);
+    background: var(--vermelho-escuro);
   } 
 
   .image-preview {
