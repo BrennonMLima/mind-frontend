@@ -7,7 +7,7 @@ import { createProject, getAllProjects, deleteProject, updateProject } from '../
 import Button from '../atoms/button/button';
 import Modal from '../molecules/modal';
 import NewProjectForm from '../organism/projectform';
-import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
+import { FiEdit, FiTrash } from 'react-icons/fi';
 
 interface Project {
     id: string;
@@ -111,8 +111,8 @@ const MainPage: React.FC = () => {
                         <Container style={{ cursor: 'pointer' }} key={project.id} onClick={() => handleProjectClick(project.id)}>
                             <Row className='cem'>
                                 <h1>{project.name}</h1>
-                                <FaRegEdit
-                                    style={{ fontSize: '30px', fill: 'var(--vermelho)', cursor: 'pointer' }}
+                                <FiEdit
+                                    style={{ fontSize: '30px', stroke: 'var(--vermelho)', cursor: 'pointer' }}
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         handleEditProjectClick(project);
@@ -140,8 +140,8 @@ const MainPage: React.FC = () => {
                                 </Task>
                             )}
                             <Row className='cem end'>
-                                <FaRegTrashAlt
-                                    style={{ fontSize: '30px', fill: 'var(--vermelho)', cursor: 'pointer' }}
+                                <FiTrash
+                                    style={{ fontSize: '30px', stroke: 'var(--vermelho)', cursor: 'pointer' }}
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         handleDeleteProject(project.id);

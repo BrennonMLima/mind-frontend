@@ -51,18 +51,6 @@ const NewTaskForm: React.FC<NewTaskFormProps> = ({ onSubmit, initialValues }) =>
         fetchUsers();
     }, [initialValues]);
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const usersResponse = await getAllUsers();
-                setUsers(usersResponse.data.users);
-            } catch (error) {
-                console.error('Erro ao buscar usuários', error);
-            }
-        };
-
-        fetchUsers();
-    }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -103,7 +91,7 @@ const NewTaskForm: React.FC<NewTaskFormProps> = ({ onSubmit, initialValues }) =>
                     <option value="">Selecione o status</option>
                     <option value="Pendente">Pendente</option>
                     <option value="Em progresso">Em progresso</option>
-                    <option value="Concluida">Concluída</option>
+                    <option value="Concluida ✓">Concluída</option>
                 </SelectStyles>
             </InputContainer>
             <InputContainer>

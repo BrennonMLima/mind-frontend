@@ -92,6 +92,9 @@ export const Row = styled.div`
         justify-content: end;
         gap: 5px;
     }
+    &.top{
+        align-items: flex-start;
+    }
 `
 
 export const Title = styled.div`

@@ -133,10 +133,16 @@ const ProjectDetailPage: React.FC = () => {
                         <ContainerGrid>
                             {tasks.map((task) => (
                                 <Container className='task' key={task.id}>
-                                    <Title style={{ marginBottom: '20px' }}>
-                                        <h1>{task.name}</h1>
-                                        <p>{task.description}</p>
-                                    </Title>
+                                    <Row className='cem top'>
+                                        <Title style={{ marginBottom: '20px' }}>
+                                            <h1>{task.name}</h1>
+                                            <p>{task.description}</p>
+                                        </Title>
+                                        <FiEdit
+                                            onClick={() => handleEditTask(task)}
+                                            style={{ cursor: 'pointer', stroke: 'var(--vermelho)', fontSize: 20 }}
+                                        />
+                                    </Row>
                                     <Row className='task cem'>
                                         <div>Responsável: </div>
                                         <div>{task.user?.name || 'Nenhum responsável'}</div>
@@ -146,14 +152,10 @@ const ProjectDetailPage: React.FC = () => {
                                         <div>Status: {task.status}</div>
                                         <div>Prazo: {formatDate(task.dueDate)}</div>
                                     </Row>
-                                    <Row className='cem'>
-                                        <FiEdit
-                                            onClick={() => handleEditTask(task)}
-                                            style={{ cursor: 'pointer', marginRight: '15px' }}
-                                        />
+                                    <Row className='task cem'>
                                         <FiTrash
                                             onClick={() => handleDeleteTask(task.id)}
-                                            style={{ cursor: 'pointer', color: 'red' }}
+                                            style={{ cursor: 'pointer', stroke: 'var(--vermelho)', fontSize: 20 }}
                                         />
                                     </Row>
                                 </Container>
