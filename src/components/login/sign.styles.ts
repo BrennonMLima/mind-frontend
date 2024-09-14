@@ -30,6 +30,8 @@ color: #999;
 
 export const InputContainer = styled.div`
 position: relative;
+display: flex;
+flex-direction: column;
 
 .text-input {
     width: 100%;
@@ -37,8 +39,11 @@ position: relative;
     border: 1px solid #ccc;
     outline: none;
 
+    &.date{
+      width: 70%;
+    }
     &:focus {
-        border-color: #007BFF;
+        border-color: var(--vermelho);
     }
 
     &:focus + ${PlaceHolder},
@@ -47,7 +52,7 @@ position: relative;
         left: 10px;
         background: var(--preto);
         font-size: 12px;
-        color: #007BFF;
+        color: var(--vermelho);
     }
 }
 `;

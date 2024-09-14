@@ -16,7 +16,7 @@ const UserImage: React.FC<UserImageProps> = ({ image }) => {
   const imageSrc = image ? convertImage(image.data) : '';
 
   return (
-    <img src={imageSrc} style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+    <img src={imageSrc} style={{ width: '45px', height: '45px', borderRadius: '50%' }} />
   );
 };
 

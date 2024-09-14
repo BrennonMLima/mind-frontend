@@ -4,6 +4,7 @@ import SignIn from '../components/login/sign-in';
 import SignUp from '../components/login/sign-up';
 import MainPage from '../components/template/mainpage';
 import ProjectDetailPage from '../components/template/projectdetail';
+import Header from '../components/molecules/header';
 
 interface RouterProps {
     isLoggedIn: boolean;

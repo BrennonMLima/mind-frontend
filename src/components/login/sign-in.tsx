@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { SignContainer, FormStyles, PlaceHolder, InputContainer } from './sign.styles';
 import Button from '../../components/atoms/button/button';
@@ -35,19 +35,19 @@ const SignIn: React.FC<LoginProps> = ({ onLogin }) => {
             <p>volta!</p>
             <FormStyles onSubmit={handleSubmit}>
                 <InputContainer>
-                    <Input 
-                        type="text" 
-                        placeholder=" " 
-                        onChange={handleEmailChange} 
-                        className={`text-input ${email ? 'filled' : ''}`}/>
+                    <Input
+                        type="text"
+                        placeholder=" "
+                        onChange={handleEmailChange}
+                        className={`text-input ${email ? 'filled' : ''}`} />
                     <PlaceHolder>Email</PlaceHolder>
                 </InputContainer>
                 <InputContainer>
-                    <Input 
-                        type="password" 
-                        placeholder=" " 
+                    <Input
+                        type="password"
+                        placeholder=" "
                         onChange={handlePasswordChange}
-                        className={`text-input ${password ? 'filled' : ''}`}/>
+                        className={`text-input ${password ? 'filled' : ''}`} />
                     <PlaceHolder>Senha</PlaceHolder>
                 </InputContainer>
                 <Button type="submit" className='margin-top'>Entrar</Button>

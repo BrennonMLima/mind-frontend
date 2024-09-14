@@ -1,16 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '../atoms/input/input';
 import { InputContainer } from '../login/sign.styles';
 import Button from '../atoms/button/button';
 import { ModalForm } from './organism.styles';
 
 interface NewProjectFormProps {
-    onSubmit: (name: string, description: string) => void;
+    onSubmit: (name: string, description: string) => Promise<void>;
+    initialValues?: {
+        name: string;
+        description: string;
+    };
 }
 
-const Form: React.FC<NewProjectFormProps> = ({ onSubmit }) => {
+const ProjectForm: React.FC<NewProjectFormProps> = ({ onSubmit, initialValues }) => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
+
+    useEffect(() => {
+        if (initialValues) {
+            setName(initialValues.name);
+            setDescription(initialValues.description);
+        }
+    }, [initialValues]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -35,9 +46,9 @@ const Form: React.FC<NewProjectFormProps> = ({ onSubmit }) => {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)} />
             </InputContainer>
-            <Button type="submit">Create Project</Button>
+            <Button type="submit">Criar Projeto</Button>
         </ModalForm>
     );
 };
 
-export default Form;
+export default ProjectForm;

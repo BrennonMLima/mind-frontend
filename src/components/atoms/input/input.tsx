@@ -29,6 +29,7 @@ const Input: React.FC<InputProps> = ({ type = 'text', placeholder, className, va
           className={className || 'text-input'}
           value={value as string}
           onChange={onChange}
+          autoComplete='on'
         />
       );
     case 'number':
@@ -61,7 +62,7 @@ const Input: React.FC<InputProps> = ({ type = 'text', placeholder, className, va
           onChange={onChange}
         />
       );
-      case 'radio':
+    case 'radio':
       return (
         <RadioStyles>
           <label>

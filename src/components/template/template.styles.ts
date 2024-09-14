@@ -13,6 +13,7 @@ export const Main = styled.div`
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
+    position: relative;
     align-items: start;
     background: var(--cinza-escuro);
     border: 0.07rem solid #e3e3e3;
@@ -23,6 +24,11 @@ export const Container = styled.div`
     padding: 5px 30px;
     margin-top: 20px;
     box-sizing: border-box; 
+    &.task{
+        justify-content: space-between;
+        min-height: 200px;
+        width: 30%;
+    }
 `
 export const ContainerGrid = styled.div`
     display: flex;
@@ -38,8 +44,11 @@ export const Task = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 10px;
-    margin-top: 30px;
+    margin-bottom: 30px;
+    &.header{
+        border-bottom: 1px solid white;
+        margin-top: 30px;
+    }
 `
 
 export const TaskContainer = styled.div`
@@ -68,10 +77,26 @@ export const Row = styled.div`
     display: flex;
     justify-content: space-between;
     width: 90%;
+    align-items: center;
+    &.cem{
+        width: 100%;
+    }
+    &.end{
+        position: absolute;
+        bottom: 10px;
+        right: 30px;
+        width: calc(100% - 20px);
+        justify-content: flex-end;
+    }
+    &.task{
+        justify-content: end;
+        gap: 5px;
+    }
 `
 
 export const Title = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 `

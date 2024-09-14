@@ -36,14 +36,6 @@ const Header: React.FC = () => {
     setIsModalOpen(false);
   };
 
-  function convertImage(data: number[]): string {
-    const byteArray = new Uint8Array(data);
-    let binary = '';
-    byteArray.forEach((byte) => binary += String.fromCharCode(byte));
-    const base64 = window.btoa(binary);
-    return `data:image/jpeg;base64,${base64}`;
-  }
-
   return (
     <HeaderStyled>
       <HeaderContainer>
@@ -52,7 +44,7 @@ const Header: React.FC = () => {
       <HeaderContainer onClick={handleModalOpen}>
         <UserImage image={user?.image || null} />
         {user && <span style={{ color: "var(--vermelho)" }}>{user.email}</span>}
-        <BsPersonFillGear />
+        <BsPersonFillGear style={{ fill: 'var(--vermelho)' }} />
       </HeaderContainer>
       {isModalOpen && <LogoutModal onClose={handleModalClose} />}
     </HeaderStyled>

@@ -30,3 +30,6 @@ export const getUserGroups = async (userId: string) => {
     return await api.get(`/user/${userId}/groups`);
 };
 
+export const getAllUsers = async () => {
+    return await api.get("/user/users")
+}

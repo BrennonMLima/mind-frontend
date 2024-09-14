@@ -23,6 +23,9 @@ export const InputStyles = styled.input`
         max-width: 80px;
     }
 
+    &.date-input{
+        width: 50%;
+    }
 `;
 
 export const RadioStyles = styled.div`
