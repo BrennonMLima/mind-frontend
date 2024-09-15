@@ -29,6 +29,11 @@ export const Container = styled.div`
         min-height: 200px;
         width: 30%;
     }
+    &:hover{
+        border: 0.07rem solid var(--vermelho-escuro);
+        box-shadow: 0rem 0.2rem 0.2rem var(--vermelho-escuro);
+    }
+
 `
 export const ContainerGrid = styled.div`
     display: flex;

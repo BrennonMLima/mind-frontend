@@ -14,26 +14,9 @@ export const InputStyles = styled.input`
         background: var(--preto);
     }
 
-    &.number-input {
-        background: --var(cinza-escuro);
-        border: 0.07rem solid #e3e3e3;
-        border-radius: 10px;
-        margin-right: 15px;
-        padding: 10px 10px;
-        max-width: 80px;
-    }
-
     &.date-input{
         width: 50%;
     }
+    
 `;
 
-export const RadioStyles = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-
-    label{
-        font-size: 15px;
-    }
-`

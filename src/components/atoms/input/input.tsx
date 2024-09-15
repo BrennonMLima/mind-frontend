@@ -1,8 +1,8 @@
 import React from 'react';
-import { InputStyles, RadioStyles } from './input.styles';
+import { InputStyles } from './input.styles';
 
 interface InputProps {
-  type?: 'text' | 'image' | 'number' | 'password' | 'date' | 'radio';
+  type?: 'text' | 'image' | 'password' | 'date' | 'radio';
   placeholder?: string;
   className?: string;
   value?: string;
@@ -32,16 +32,6 @@ const Input: React.FC<InputProps> = ({ type = 'text', placeholder, className, va
           autoComplete='on'
         />
       );
-    case 'number':
-      return (
-        <InputStyles
-          type="text"
-          placeholder={placeholder}
-          className={className || 'number-input'}
-          value={value as string}
-          onChange={onChange}
-        />
-      );
     case 'date':
       return (
         <InputStyles
@@ -61,31 +51,6 @@ const Input: React.FC<InputProps> = ({ type = 'text', placeholder, className, va
           value={value}
           onChange={onChange}
         />
-      );
-    case 'radio':
-      return (
-        <RadioStyles>
-          <label>
-            <input
-              type="radio"
-              name="type"
-              value="receita"
-              checked={value === 'receita'}
-              onChange={onChange}
-            />
-            Receita
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="type"
-              value="despesa"
-              checked={value === 'despesa'}
-              onChange={onChange}
-            />
-            Despesa
-          </label>
-        </RadioStyles>
       );
     default:
       return <InputStyles type="text" placeholder={placeholder} className={className} value={value as string} onChange={onChange} />;
